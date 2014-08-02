@@ -2,11 +2,12 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 EAPI=5
-inherit linux-info
+inherit linux-info git-r3
+
 
 DESCRIPTION="Minimalistic UEFI bootloader"
 HOMEPAGE="http://freedesktop.org/wiki/Software/gummiboot/"
-SRC_URI="http://cgit.freedesktop.org/gummiboot/snapshot/gummiboot-45.tar.gz"
+EGIT_REPO_URI="git://anongit.freedesktop.org/${PN}"
 
 LICENSE="LGPL-2.1+"
 SLOT="0"
