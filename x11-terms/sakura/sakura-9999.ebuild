@@ -12,7 +12,7 @@ EGIT_REPO_URI="git://github.com/j-g-/sakura.git/"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm-linux ~x86-linux"
+KEYWORDS="*"
 
 RDEPEND="
 	>=dev-libs/glib-2.20:2
