@@ -23,11 +23,7 @@ FONT_S=${S}
 FONT_SUFFIX="ttf"
 FONT_CONF={"$FILESDIR/99-ankcacoder.conf"}
 src_unpack() {
-
 	unpack ${A} || die "culdn't upcack"
-	echo "Files extracted: "
-	ls -laR
-
 }
 
 src_install(){
