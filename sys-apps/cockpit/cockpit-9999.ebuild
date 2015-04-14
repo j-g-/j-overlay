@@ -71,6 +71,6 @@ src_install(){
 	emake DESTDIR=${D}  install || die "emake install failed"
 	ewarn "Installing experimetal pam configuration file"
 	ewarn "use at your own risk"
-	newpamd "${FILESDIR}/cockpit.pam"
+	newpamd "${FILESDIR}/cockpit.pam" cockpit
 	dodoc README.md AUTHORS
 }
