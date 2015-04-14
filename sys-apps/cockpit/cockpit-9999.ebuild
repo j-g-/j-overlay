@@ -4,7 +4,7 @@
 
 EAPI=5
 
-inherit user autotools eutils git-r3
+inherit user pam autotools eutils git-r3
 
 DESCRIPTION="Server Administration Web Interface "
 HOMEPAGE="http://cockpit-project.org/"
@@ -67,4 +67,10 @@ src_configure() {
 		--with-cockpit-group=cockpit-ws"
 	econf $myconf
 }
-
+src_install(){
+	emake DESTDIR=${D}  install || die "emake install failed"
+	ewarn "Installing experimetal pam configuration file"
+	ewarn "use at your own risk"
+	newpamd "${FILESDIR}/cockpit.pam"
+	dodoc README.md AUTHORS
+}
