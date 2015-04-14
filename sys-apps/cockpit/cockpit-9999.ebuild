@@ -56,7 +56,7 @@ src_prepare() {
 	pushd  ${S}/tools
 	touch .npmrc
 	npm install || die "Couldn't install nodejs modules"
-	popd ${S}
+	popd 
 }
 
 src_configure() {
