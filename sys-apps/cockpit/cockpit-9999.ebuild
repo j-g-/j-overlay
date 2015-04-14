@@ -44,7 +44,7 @@ pkg_setup(){
 		einfo
 	fi
 	if [ -z "$(egetent passwd cockpit-ws 2>/dev/null)" ]; then
-		enewuser cockpit-ws -1 -1 -1 cockpit-ws
+		enewuser cockpit-ws -1 -1 /var/lib/cockpit cockpit-ws
 		einfo
 		einfo "The user 'cockpit-ws' has been created."
 		einfo
@@ -61,6 +61,7 @@ src_prepare() {
 
 src_configure() {
 	local myconf="
+		--localstatedir="${ROOT}/var"
 		$(use_enable maintainer-mode)  
 		$(use_enable debug) 
 		$(use_enable doc)
