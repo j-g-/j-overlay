@@ -62,7 +62,9 @@ src_configure() {
 	local myconf="
 		$(use_enable maintainer-mode)  
 		$(use_enable debug) 
+		--with-pamdir=/lib64/security
 		--with-cockpit-user=cockpit-ws  
 		--with-cockpit-group=cockpit-ws"
 	econf $myconf
 }
+
