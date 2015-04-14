@@ -4,7 +4,7 @@
 
 EAPI=5
 
-inherit autotools eutils git-r3
+inherit user autotools eutils git-r3
 
 DESCRIPTION="Server Administration Web Interface "
 HOMEPAGE="http://cockpit-project.org/"
@@ -23,6 +23,7 @@ IUSE="+debug test +maintainer-mode"
 REQUIRED_USE="maintainer-mode debug"
 
 DEPEND=">=net-libs/libssh-0.6[server]
+		>=dev-libs/json-glib-1.0.0
 		sys-apps/pcp
 		net-libs/nodejs[npm]"
 
@@ -54,11 +55,9 @@ src_prepare() {
 
 src_configure() {
 	local myconf="
-		$(use_enable maintainer-mode) \ 
-		$(use_enable debug) \ 	
-		--with-cockpit-user=cockpit-ws \ 
+		$(use_enable maintainer-mode)  
+		$(use_enable debug) 
+		--with-cockpit-user=cockpit-ws  
 		--with-cockpit-group=cockpit-ws"
 	econf $myconf
 }
-
-
