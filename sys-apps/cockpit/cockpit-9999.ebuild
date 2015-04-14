@@ -18,7 +18,7 @@ fi
 
 LICENSE="LGPL-2.1+"
 SLOT="0"
-IUSE="+debug test +maintainer-mode"
+IUSE="+debug test +maintainer-mode doc"
 
 REQUIRED_USE="maintainer-mode debug"
 
@@ -30,7 +30,8 @@ DEPEND=">=net-libs/libssh-0.6[server]
 		app-crypt/mit-krb5
 		dev-util/gdbus-codegen
 		sys-apps/pcp
-		net-libs/nodejs[npm]"
+		net-libs/nodejs[npm]
+		doc? ( app-doc/xmlto )"
 
 RDEPEND="${DEPEND}"
 
@@ -62,6 +63,7 @@ src_configure() {
 	local myconf="
 		$(use_enable maintainer-mode)  
 		$(use_enable debug) 
+		$(use_enable doc)
 		--with-pamdir=/lib64/security
 		--with-cockpit-user=cockpit-ws  
 		--with-cockpit-group=cockpit-ws"
