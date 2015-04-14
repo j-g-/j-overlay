@@ -53,10 +53,6 @@ pkg_setup(){
 
 src_prepare() {
 	epatch_user
-
-    pushd ${tools}
-    npm install
-    popd
 }
 src_configure() {
     # Setting xmlto as default documentation generator
