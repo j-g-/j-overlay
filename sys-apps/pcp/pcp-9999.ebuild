@@ -27,6 +27,7 @@ DEPEND="
         python?    ( ${PYTHON_DEPS}         ) 
         perfevent? ( dev-libs/libpfm        ) 
         papi?      ( dev-libs/papi          ) 
+        discovery? ( net-dns/avahi[dbus]    ) 
         webapi?    ( net-libs/libmicrohttpd ) 
         doc?       ( app-doc/xmlto          ) "
 
