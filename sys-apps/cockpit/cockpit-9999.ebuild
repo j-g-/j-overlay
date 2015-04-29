@@ -53,8 +53,9 @@ pkg_setup(){
 src_prepare() {
 	epatch_user
 	eautoreconf
+
 	pushd  ${S}/tools
-	touch .npmrc
+	einfo "Insalling nodejs packages"
 	npm install || die "Couldn't install nodejs modules"
 	popd 
 }
