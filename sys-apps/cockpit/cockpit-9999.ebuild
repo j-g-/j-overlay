@@ -33,7 +33,8 @@ DEPEND=">=net-libs/libssh-0.6[server]
 		net-libs/nodejs[npm]
 		doc? ( app-doc/xmlto )"
 
-RDEPEND="${DEPEND}"
+RDEPEND="${DEPEND}
+        net-libs/glib-networking[ssl]"
 
 pkg_setup(){
 	if [ -z "$(egetent group cockpit-ws 2>/dev/null)" ]; then
