@@ -4,11 +4,11 @@
 
 EAPI=5
 
-inherit user pam autotools eutils git-r3
+inherit user pam autotools eutils 
 
 DESCRIPTION="Server Administration Web Interface "
 HOMEPAGE="http://cockpit-project.org/"
-SRC_URI=""
+SRC_URI="https://github.com/cockpit-project/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 if [[ ${PV} == 9999* ]] ; then
 	inherit git-r3
