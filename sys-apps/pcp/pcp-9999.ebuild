@@ -61,6 +61,7 @@ src_configure() {
 
     # Configuration flags
     local myconf=" 
+		--localstatedir=${ROOT}/var \
         $(use_enable ssp) \
         $(use_enable pie) \
         $(use_with threads) \
