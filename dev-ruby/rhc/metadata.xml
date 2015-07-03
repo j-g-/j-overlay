@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer>
+		<name>J. García</name>
+		<email>jyo.garcia@yahoo.com</email>
+	</maintainer>
+	<longdescription lang="en">
+		Ruby gem containing. rhc the command line interface for OpenShift.
+	</longdescription>
+</pkgmetadata>
