@@ -6,9 +6,10 @@ EAPI=5
 
 inherit user pam autotools eutils 
 
+KEYWORDS="~amd64 ~x86"
 DESCRIPTION="Server Administration Web Interface "
 HOMEPAGE="http://cockpit-project.org/"
-SRC_URI="https://github.com/cockpit-project/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/cockpit-project/${PN}/releases/download/${PV}/${P}.tar.bz2"
 
 if [[ ${PV} == 9999* ]] ; then
 	inherit git-r3
@@ -25,7 +26,7 @@ REQUIRED_USE="maintainer-mode debug"
 DEPEND=">=net-libs/libssh-0.6[server]
 		>=dev-libs/json-glib-1.0.0
 		>=sys-auth/polkit-0.105
-		sys-apps/systemd[gudev]
+		virtual/libgudev[systemd]
 		sys-fs/lvm2
 		app-crypt/mit-krb5
 		dev-util/gdbus-codegen
@@ -55,11 +56,6 @@ pkg_setup(){
 src_prepare() {
 	epatch_user
 	eautoreconf
-
-	pushd  ${S}/tools
-	einfo "Insalling nodejs packages"
-	npm install || die "Couldn't install nodejs modules"
-	popd 
 }
 
 src_configure() {
